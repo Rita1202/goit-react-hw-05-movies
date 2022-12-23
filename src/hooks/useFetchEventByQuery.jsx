@@ -1,3 +1,5 @@
+import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import { fetchMoviesByQuery } from 'services/eventApi';
 
 export const useFetchEventQuery = () => {

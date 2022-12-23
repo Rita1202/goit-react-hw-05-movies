@@ -1,5 +1,3 @@
-import css from './Modal.css';
-
 export const Modal = ({ movie, closeModal }) => {
   const toggleBurger = () => {
     closeModal();

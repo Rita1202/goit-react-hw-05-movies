@@ -1,10 +1,4 @@
-import {
-  Link,
-  Outlet,
-  useLocation,
-  useNavigate,
-  createBrowserRouter,
-} from 'react-router-dom';
+import { Link, Outlet, useLocation, useNavigate } from 'react-router-dom';
 import { useFetchEvent } from 'hooks/useFetchEvent';
 import css from '../pages/Common.module.css';
 
