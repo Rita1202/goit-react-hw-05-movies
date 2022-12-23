@@ -1,0 +1,37 @@
+.wrapper {
+  /* position: absolute;
+  bottom: 0;
+  right: 0; */
+  /* margin-right: 20px; */
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.nav {
+  display: flex;
+  width: 392px;
+  gap: 20px;
+}
+
+.link {
+  position: relative;
+  font-size: 20px;
+  padding: 6px;
+}
+
+.link:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 5px;
+  right: -10px;
+  display: inline-block;
+  background-color: #fff;
+  width: 1px;
+  height: 25px;
+  /* border-right: 2px solid #4d4d4d; */
+}
+
+/* 
+:not(:last-child)  */

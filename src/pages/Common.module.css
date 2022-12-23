@@ -1,0 +1,139 @@
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  background-color: #1a1a1a;
+}
+
+.text {
+  font-size: 22px;
+  padding: 8px;
+}
+
+.link {
+  text-align: center;
+}
+
+.img {
+  display: inline-block;
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.castWrapper {
+  padding: 20px;
+  background-color: #1a1a1a;
+}
+
+.castTitle {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.casts {
+  width: 100%;
+  display: flex;
+  gap: ;
+}
+
+.catsItem {
+  width: calc(100% / 5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.wrapperDetails {
+  display: flex;
+  gap: 10px;
+}
+
+.movieInfo li:nth-child(2n + 1) {
+  background-color: #1a1a1a;
+}
+
+.movieInfo {
+  width: 100%;
+}
+
+.name {
+  font-size: 22px;
+  text-transform: uppercase;
+}
+
+.addInfo {
+  display: flex;
+}
+
+.info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10px;
+  width: 150px;
+  padding: 5px;
+  font-size: 22px;
+  text-align: center;
+  cursor: pointer;
+  background-color: #ffcc00;
+  border: none;
+  color: black;
+}
+
+.goBack {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  width: 150px;
+  padding: 5px;
+  font-size: 22px;
+  text-align: center;
+  cursor: pointer;
+  background-color: #ffcc00;
+  border: none;
+  color: black;
+}
+
+.goBack::before {
+  content: url('../images/arror.svg');
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translate(-50%, -50%);
+}
+
+.posterPath {
+  margin-bottom: 20px;
+}
+
+.author {
+  font-size: 26px;
+  margin-bottom: 13px;
+}
+
+.reviewList {
+  display: flex;
+  flex-direction: column;
+  text-align: justify;
+  gap: 14px;
+  color: #a5a5a5;
+}
+
+.reviewItem {
+  padding: 16px;
+  background-color: #1a1a1a;
+}

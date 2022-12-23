@@ -1,0 +1,28 @@
+.form {
+  display: block;
+  width: 400px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+.input {
+  width: 300px;
+  height: 30px;
+  padding: 0 10px;
+  color: white;
+  background-color: #000000;
+  outline: none;
+  border: 2px solid #4d4d4d;
+}
+
+.button {
+  margin-left: 10px;
+  padding: 0 24 px;
+  height: 34px;
+  background-color: inherit;
+  cursor: pointer;
+  background-color: #4d4d4d;
+  color: white;
+  outline: none;
+  border: 2px solid #4d4d4d;
+}

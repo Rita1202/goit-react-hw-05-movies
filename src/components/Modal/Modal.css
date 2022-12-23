@@ -1,0 +1,80 @@
+.backdrop {
+  background-color: rgba(255, 255, 255, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.modal {
+  position: relative;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%);
+  width: 500px;
+  height: 400px;
+  padding: 10px;
+  background-color: white;
+  color: black;
+}
+
+.wrapper {
+  display: flex;
+  gap: 10px;
+}
+
+.img {
+  width: 200px;
+}
+
+.lang {
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.burger {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: block;
+  cursor: pointer;
+  height: 18px;
+  width: 30px;
+  /* position: relative; */
+}
+
+.burger span {
+  z-index: 55;
+  position: absolute;
+  transform: translateY(-100%);
+  top: calc(50% - 1px);
+  right: 0;
+  height: 2px;
+  width: 100%;
+  background-color: black;
+  transition: transform 250ms linear;
+}
+
+.burger span:first-child {
+  top: 0;
+}
+
+.burger span:last-child {
+  top: auto;
+  bottom: 0;
+}
+
+.burger:hover span {
+  transform: scale(0);
+}
+
+.burger:hover span:first-child {
+  transform: rotate(-45deg);
+  top: calc(50% - 1px);
+}
+
+.burger:hover span:last-child {
+  transform: rotate(45deg);
+  bottom: calc(50% - 1px);
+}
