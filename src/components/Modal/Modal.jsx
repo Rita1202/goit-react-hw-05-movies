@@ -12,7 +12,7 @@ export const Modal = ({ movie, closeModal }) => {
         {/* <button className={css.close} type="button">
           Close
         </button> */}
-        <div onClick={toggleBurger} class="burger">
+        <div onClick={toggleBurger} className="burger">
           <span></span>
           <span></span>
           <span></span>
