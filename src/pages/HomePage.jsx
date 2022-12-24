@@ -14,10 +14,10 @@ export const HomePage = () => {
   const firstRender = useRef(true);
 
   useEffect(() => {
-    if (firstRender.current) {
-      firstRender.current = false;
-      return;
-    }
+    // if (firstRender.current) {
+    //   firstRender.current = false;
+    //   return;
+    // }
     fetchTrendMovies(page).then(res => {
       setMovies(prev => [...prev, ...res]);
     });
