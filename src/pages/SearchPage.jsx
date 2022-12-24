@@ -21,11 +21,11 @@ export const SearchPage = () => {
     //   firstRender.current = false;
     //   return;
     // }
-    if (query) {
-      fetchMoviesByQuery(query, page).then(res => {
-        setMovies(prev => [...prev, ...res]);
-      });
-    }
+    // if (query) {
+    fetchMoviesByQuery(query, page).then(res => {
+      setMovies(prev => [...prev, ...res]);
+    });
+    // }
   }, [query, page]);
 
   const openModal = movie => {
