@@ -1,3 +1,4 @@
+import './Modal.css';
 export const Modal = ({ movie, closeModal }) => {
   const toggleBurger = () => {
     closeModal();
@@ -7,18 +8,15 @@ export const Modal = ({ movie, closeModal }) => {
   return (
     <div className="backdrop">
       <div className="modal">
-        {/* <button className={css.close} type="button">
-          Close
-        </button> */}
         <div onClick={toggleBurger} className="burger">
           <span></span>
           <span></span>
           <span></span>
         </div>
-        <div className="wrapper">
+        <div className="wrapperModal">
           <div className="imgWrapper">
             <img
-              className="img"
+              className="imgModal"
               src={`https://image.tmdb.org/t/p/w500${poster_path}`}
               alt={title}
             />

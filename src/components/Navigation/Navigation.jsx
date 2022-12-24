@@ -1,4 +1,4 @@
-import { NavLink, useLocation } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import css from './Navigation.module.css';
 
 export const Navigation = () => {
@@ -8,7 +8,6 @@ export const Navigation = () => {
 
   return (
     <div className={css.wrapper}>
-      {/* {location.pathname !== '/movies' && <SearchForm />} */}
       <nav>
         <ul className={css.nav}>
           <NavLink

@@ -22,7 +22,10 @@ export const MovieListItem = ({ state, movie, rating, vote, openModal }) => {
       <Link
         to={state.from}
         className={css.preview}
-        onClick={() => openModal(movie)}
+        onClick={() => {
+          openModal(movie);
+          console.log(movie);
+        }}
       >
         Preview
       </Link>

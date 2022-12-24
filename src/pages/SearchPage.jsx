@@ -14,13 +14,13 @@ export const SearchPage = () => {
 
   const query = searchParams.get('query');
   const location = useLocation();
-  // const firstRender = useRef(true);
+  const firstRender = useRef(true);
 
   useEffect(() => {
-    // if (firstRender.current) {
-    //   firstRender.current = false;
-    //   return;
-    // }
+    if (firstRender.current) {
+      firstRender.current = false;
+      return;
+    }
     if (query) {
       fetchMoviesByQuery(query, page).then(res => {
         setMovies(prev => [...prev, ...res]);

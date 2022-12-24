@@ -19,12 +19,12 @@
   color: black;
 }
 
-.wrapper {
+.wrapperModal {
   display: flex;
   gap: 10px;
 }
 
-.img {
+.imgModal {
   width: 200px;
 }
 

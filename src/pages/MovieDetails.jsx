@@ -6,11 +6,6 @@ export const MovieDetails = ({ a }) => {
   const movieId = useFetchEvent();
   const navigate = useNavigate();
   const location = useLocation();
-  console.log(location, 'movie detael');
-
-  // const goBack = () => {
-  //   history.push(location.state.from);
-  // };
   return (
     movieId && (
       <>
