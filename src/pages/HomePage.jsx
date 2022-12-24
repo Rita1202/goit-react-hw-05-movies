@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
 import { fetchTrendMovies } from 'services/eventApi';
 import { MovieListItem } from 'components/MovieListItem/MovieListItem';
@@ -11,13 +11,14 @@ export const HomePage = () => {
   const [currentMovie, setCurrentMovie] = useState(null);
   const [page, setPage] = useState(1);
   const location = useLocation();
-  const firstRender = useRef(true);
+  // const firstRender = useRef(true);
 
   useEffect(() => {
-    if (firstRender.current) {
-      firstRender.current = false;
-      return;
-    }
+    // if (firstRender.current) {
+    //   firstRender.current = false;
+    //   return;
+    // }
+
     fetchTrendMovies(page).then(res => {
       setMovies(prev => [...prev, ...res]);
     });
