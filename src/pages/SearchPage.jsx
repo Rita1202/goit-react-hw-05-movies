@@ -1,5 +1,5 @@
 import { Outlet, useSearchParams, useLocation } from 'react-router-dom';
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { fetchMoviesByQuery } from 'services/eventApi';
 import { MovieListByQuery } from 'components/MovieListByQuery/MovieListByQuery';
 import { SearchForm } from 'components/SearchForm/SearchForm';
@@ -14,7 +14,8 @@ export const SearchPage = () => {
 
   const query = searchParams.get('query');
   const location = useLocation();
-  const firstRender = useRef(true);
+  console.log(location, 'from');
+  // const firstRender = useRef(true);
 
   useEffect(() => {
     // if (firstRender.current) {
