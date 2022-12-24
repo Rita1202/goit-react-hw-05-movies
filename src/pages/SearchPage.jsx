@@ -14,7 +14,6 @@ export const SearchPage = () => {
 
   const query = searchParams.get('query');
   const location = useLocation();
-  console.log(location, 'location where to go');
   const firstRender = useRef(true);
 
   useEffect(() => {

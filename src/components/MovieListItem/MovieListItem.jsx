@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 export const MovieListItem = ({ state, movie, rating, vote, openModal }) => {
   const { id, poster_path, title, genre, release } = movie;
-  console.log(state);
+
   return (
     <li
       key={id}

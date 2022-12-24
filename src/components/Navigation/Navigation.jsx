@@ -2,12 +2,10 @@ import { NavLink, useLocation } from 'react-router-dom';
 import css from './Navigation.module.css';
 
 export const Navigation = () => {
-  const location = useLocation();
   let activeStyle = {
     color: '#ffcc00',
   };
 
-  console.log(location);
   return (
     <div className={css.wrapper}>
       {/* {location.pathname !== '/movies' && <SearchForm />} */}
