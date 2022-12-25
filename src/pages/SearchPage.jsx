@@ -5,28 +5,29 @@ import { MovieListByQuery } from 'components/MovieListByQuery/MovieListByQuery';
 import { SearchForm } from 'components/SearchForm/SearchForm';
 import { Modal } from 'components/Modal/Modal';
 import { LoadMore } from 'components/LoadMore/LoadMore';
+import errorPhoto from '../images/error.jpeg';
+import css from '../pages/Common.module.css';
 
 export const SearchPage = () => {
   const [movies, setMovies] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
   const [currentMovie, setCurrentMovie] = useState(null);
   const [page, setPage] = useState(1);
+  const [error, setError] = useState('');
 
   const query = searchParams.get('query');
   const location = useLocation();
-  console.log(location, 'from');
-  // const firstRender = useRef(true);
 
   useEffect(() => {
-    // if (firstRender.current) {
-    //   firstRender.current = false;
-    //   return;
-    // }
-    // if (query) {
-    fetchMoviesByQuery(query, page).then(res => {
-      setMovies(prev => [...prev, ...res]);
-    });
-    // }
+    if (query) {
+      fetchMoviesByQuery(query, page)
+        .then(res => {
+          if (typeof res === 'function') {
+            throw new Error('bad');
+          } else setMovies(prev => [...prev, ...res]);
+        })
+        .catch(error => setError(error));
+    }
   }, [query, page]);
 
   const openModal = movie => {
@@ -40,6 +41,7 @@ export const SearchPage = () => {
     setSearchParams({ query: value });
     event.target.reset();
     setMovies([]);
+    setError('');
   };
 
   const closeModal = movie => {
@@ -53,6 +55,7 @@ export const SearchPage = () => {
   return (
     <>
       <SearchForm handleSubmit={handleSubmit} />
+      {error && <img className={css.error} src={errorPhoto} alt="error" />}
       {query && (
         <MovieListByQuery
           openModal={openModal}

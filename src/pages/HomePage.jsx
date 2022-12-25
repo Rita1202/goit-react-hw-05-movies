@@ -19,9 +19,11 @@ export const HomePage = () => {
     //   return;
     // }
 
-    fetchTrendMovies(page).then(res => {
-      setMovies(prev => [...prev, ...res]);
-    });
+    fetchTrendMovies(page)
+      .then(res => {
+        setMovies(prev => [...prev, ...res]);
+      })
+      .catch(error => console.log(error));
   }, [page]);
 
   const openModal = movie => {

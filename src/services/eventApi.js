@@ -37,16 +37,24 @@ export async function fetchMoviesByIdReviews(id) {
 }
 
 export async function fetchMoviesByQuery(query, page) {
-  const responce = await axios.get(
-    `https://api.themoviedb.org/3/search/movie?`,
-    {
-      params: {
-        api_key: KEY,
-        query,
-        page,
-      },
-    }
-  );
+  try {
+    const responce = await axios.get(
+      `https://api.themoviedb.org/3/search/movie?`,
+      {
+        params: {
+          api_key: KEY,
+          query,
+          page,
+        },
+      }
+    );
 
-  return responce.data.results;
+    if (responce.data.results.length === 0) {
+      throw Error;
+    }
+    return responce.data.results;
+  } catch (err) {
+    console.log(err);
+    return err;
+  }
 }
