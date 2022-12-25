@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import css from './SearchForm.module.css';
 
-export const SearchForm = ({ handleSubmit }) => {
+const SearchForm = ({ handleSubmit }) => {
   const navigate = useNavigate();
   return (
     <form className={css.form} onSubmit={handleSubmit}>
@@ -22,3 +22,5 @@ export const SearchForm = ({ handleSubmit }) => {
     </form>
   );
 };
+
+export default SearchForm;

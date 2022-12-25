@@ -1,6 +1,6 @@
 import css from './LoadMore.module.css';
 
-export const LoadMore = ({ handleLoadMore }) => {
+const LoadMore = ({ handleLoadMore }) => {
   return (
     <button
       onClick={() => {
@@ -13,3 +13,5 @@ export const LoadMore = ({ handleLoadMore }) => {
     </button>
   );
 };
+
+export default LoadMore;

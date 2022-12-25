@@ -2,7 +2,7 @@ import { useLocation } from 'react-router-dom';
 import { MovieListItem } from 'components/MovieListItem/MovieListItem';
 import css from '../../pages/Common.module.css';
 
-export const MovieListByQuery = ({ movies, openModal }) => {
+const MovieListByQuery = ({ movies, openModal }) => {
   const location = useLocation();
 
   return (
@@ -23,3 +23,5 @@ export const MovieListByQuery = ({ movies, openModal }) => {
     </ul>
   );
 };
+
+export default MovieListByQuery;

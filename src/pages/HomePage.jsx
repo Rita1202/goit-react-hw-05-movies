@@ -1,10 +1,12 @@
+import React, { Suspense } from 'react';
 import { useState, useEffect } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
 import { fetchTrendMovies } from 'services/eventApi';
 import { MovieListItem } from 'components/MovieListItem/MovieListItem';
-import { Modal } from 'components/Modal/Modal';
-import { LoadMore } from 'components/LoadMore/LoadMore';
+// import { Modal } from 'components/Modal/Modal';
 import css from '../pages/Common.module.css';
+const LoadMore = React.lazy(() => import('../components/LoadMore/LoadMore'));
+const Modal = React.lazy(() => import('../components/Modal/Modal'));
 
 export const HomePage = () => {
   const [movies, setMovies] = useState([]);
@@ -41,23 +43,27 @@ export const HomePage = () => {
   return (
     movies && (
       <>
-        <ul className={css.gallery}>
-          {movies.map(movie => {
-            const rating = movie.vote_average * 10 + '%';
-            return (
-              <MovieListItem
-                key={movie.id}
-                movie={movie}
-                state={{ from: location }}
-                rating={rating}
-                vote={movie.vote_average}
-                openModal={openModal}
-              />
-            );
-          })}
-        </ul>
-        <LoadMore handleLoadMore={handleLoadMore} />
-        {currentMovie && <Modal movie={currentMovie} closeModal={closeModal} />}
+        <Suspense fallback={<div>Загрузка...</div>}>
+          <ul className={css.gallery}>
+            {movies.map(movie => {
+              const rating = movie.vote_average * 10 + '%';
+              return (
+                <MovieListItem
+                  key={movie.id}
+                  movie={movie}
+                  state={{ from: location }}
+                  rating={rating}
+                  vote={movie.vote_average}
+                  openModal={openModal}
+                />
+              );
+            })}
+          </ul>
+          <LoadMore handleLoadMore={handleLoadMore} />
+          {currentMovie && (
+            <Modal movie={currentMovie} closeModal={closeModal} />
+          )}{' '}
+        </Suspense>
         <Outlet />
       </>
     )
