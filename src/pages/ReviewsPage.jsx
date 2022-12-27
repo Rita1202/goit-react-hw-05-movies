@@ -1,7 +1,7 @@
 import { useFetchEventReviews } from 'hooks/useFetchEventReviews';
 import css from '../pages/Common.module.css';
 
-export const Reviews = () => {
+export const ReviewsPage = () => {
   const movieId = useFetchEventReviews();
   return (
     movieId && (

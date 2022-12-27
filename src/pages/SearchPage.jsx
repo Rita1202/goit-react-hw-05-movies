@@ -2,16 +2,11 @@ import React, { Suspense } from 'react';
 import { Outlet, useSearchParams, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { fetchMoviesByQuery } from 'services/eventApi';
-
-// import { MovieListByQuery } from 'components/MovieListByQuery/MovieListByQuery';
-// import { SearchForm } from 'components/SearchForm/SearchForm';
-// import { LoadMore } from 'components/LoadMore/LoadMore';
 import errorPhoto from '../images/error.jpeg';
 import css from '../pages/Common.module.css';
-// import { Modal } from 'components/Modal/Modal';
 const Modal = React.lazy(() => import('../components/Modal/Modal'));
-const MovieListByQuery = React.lazy(() =>
-  import('../components/MovieListByQuery/MovieListByQuery.jsx')
+const MovieList = React.lazy(() =>
+  import('../components/MovieList/MovieList.jsx')
 );
 const SearchForm = React.lazy(() => import('components/SearchForm/SearchForm'));
 const LoadMore = React.lazy(() => import('../components/LoadMore/LoadMore'));
@@ -43,7 +38,6 @@ export const SearchPage = () => {
   };
 
   const handleSubmit = event => {
-    console.log(event);
     event.preventDefault();
     const value = event.target.elements.query.value;
     setSearchParams({ query: value });
@@ -66,11 +60,10 @@ export const SearchPage = () => {
         <SearchForm handleSubmit={handleSubmit} />
         {error && <img className={css.error} src={errorPhoto} alt="error" />}
         {query && (
-          <MovieListByQuery
+          <MovieList
             openModal={openModal}
             state={{ from: location }}
             movies={movies}
-            a={location}
           />
         )}
         {movies.length !== 0 && <LoadMore handleLoadMore={handleLoadMore} />}

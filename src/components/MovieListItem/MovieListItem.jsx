@@ -24,7 +24,6 @@ export const MovieListItem = ({ state, movie, rating, vote, openModal }) => {
         className={css.preview}
         onClick={() => {
           openModal(movie);
-          console.log(movie);
         }}
       >
         Preview

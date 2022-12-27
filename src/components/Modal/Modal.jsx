@@ -1,5 +1,5 @@
 import './Modal.css';
-export const Modal = ({ movie, closeModal }) => {
+const Modal = ({ movie, closeModal }) => {
   const toggleBurger = () => {
     closeModal();
   };
@@ -31,3 +31,5 @@ export const Modal = ({ movie, closeModal }) => {
     </div>
   );
 };
+
+export default Modal;

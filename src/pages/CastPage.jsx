@@ -2,7 +2,7 @@ import { useFetchEventCast } from 'hooks/useFetchEventCasts';
 import css from '../pages/Common.module.css';
 import user from '../images/user-icon.svg';
 
-export const Cast = () => {
+export const CastPage = () => {
   const movieId = useFetchEventCast();
 
   return (

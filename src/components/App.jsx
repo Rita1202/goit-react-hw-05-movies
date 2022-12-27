@@ -2,9 +2,9 @@ import { Route, Routes } from 'react-router-dom';
 import { Layout } from './Layout/Layout';
 import { HomePage } from 'pages/HomePage';
 import { SearchPage } from 'pages/SearchPage';
-import { MovieDetails } from 'pages/MovieDetails';
-import { Cast } from 'pages/Cast';
-import { Reviews } from 'pages/Reviews';
+import { MovieDetailsPage } from 'pages/MovieDetailsPage';
+import { CastPage } from 'pages/CastPage';
+import { ReviewsPage } from 'pages/ReviewsPage';
 
 export const App = () => {
   return (
@@ -12,9 +12,9 @@ export const App = () => {
       <Route path="/" element={<Layout />}>
         <Route index element={<HomePage />} />
         <Route path="movies" element={<SearchPage />} />
-        <Route path="/movies/:movieId" element={<MovieDetails />}>
-          <Route path="cast" element={<Cast />} />
-          <Route path="reviews" element={<Reviews />} />
+        <Route path="/movies/:movieId" element={<MovieDetailsPage />}>
+          <Route path="cast" element={<CastPage />} />
+          <Route path="reviews" element={<ReviewsPage />} />
         </Route>
         <Route path="watched" element={<SearchPage />} />
       </Route>
